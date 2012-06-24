@@ -1,0 +1,10 @@
+<div class="cart_title">Twój koszyk</div>
+<table>
+  <%= render(cart.line_items) %>
+    <tr class="total_line">
+      <td colspan="2">Suma:</td>
+      <td class="total_cell"><%= number_to_currency(cart.total_price, :unit => "zł", :format => "%n %u") %></td>
+    </tr>  
+</table>
+
+<%= button_to "Wyczyść koszyk!", cart, :method => :delete, :confirm => 'Jesteś pewien?' %>

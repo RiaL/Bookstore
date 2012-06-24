@@ -58,6 +58,19 @@
         border-top: 1px solid #595;
 }
 
+/* Styles for the cart in the sidebar */
+
+#cart, #cart tabel{
+    font-size: medium;
+    color: white;
+}
+
+#cart tabel{
+    border-top: 1px dotted #595;
+    border-bottom: 1px dotted #595;
+    margin-bottom: 10px;
+}
+
 /* Global styles */
 
 #store #notice {
