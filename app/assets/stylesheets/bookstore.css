@@ -61,14 +61,48 @@
 /* Styles for the cart in the sidebar */
 
 #cart, #cart tabel{
-    font-size: medium;
-    color: white;
+        font-size: medium;
+        color: white;
 }
 
 #cart tabel{
-    border-top: 1px dotted #595;
-    border-bottom: 1px dotted #595;
-    margin-bottom: 10px;
+        border-top: 1px dotted #595;
+        border-bottom: 1px dotted #595;
+        margin-bottom: 10px;
+}
+
+/* Styles for order form */
+
+.bookstore_form fieldset{
+        background: #efe;
+}
+
+.bookstore_form legend {
+        color: #dfd;
+        background: #141;
+        font-family: sans-serif;
+        padding: 0.2em 1em;
+}
+
+.bookstore_form label {
+        width: 5em;
+        float: left;
+        text-align: right;
+        padding-top: 0.2em;
+        margin-right: 0.1em;
+        display: block;
+}
+
+.bookstore_form select, .bookstore_form textarea, .bookstore_form input {
+        margin-left: 0.5em;
+}
+
+.bookstore_form .submit {
+        margin-left: 4em;
+}
+
+.bookstore_form div {
+        margin: 0.5em 0;
 }
 
 /* Global styles */
