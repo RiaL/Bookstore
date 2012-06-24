@@ -1,0 +1,7 @@
+Sun, 24 Jun 2012 13:30:28 +0200
+doc/README_FOR_APP	Sun, 24 Jun 2012 12:32:32 +0200
+app/controllers/application_controller.rb	Sun, 24 Jun 2012 12:32:32 +0200
+app/controllers/products_controller.rb	Sun, 24 Jun 2012 12:32:32 +0200
+app/helpers/application_helper.rb	Sun, 24 Jun 2012 12:32:32 +0200
+app/helpers/products_helper.rb	Sun, 24 Jun 2012 12:32:32 +0200
+app/models/product.rb	Sun, 24 Jun 2012 12:32:32 +0200
