@@ -8,6 +8,6 @@ class Product < ActiveRecord::Base
   validates :name, :uniqueness => true
   validates :image_url, :format => {
     :with => %r{\.(gif|jpg|png)}i,
-    :message => 'zły typ pliku (.gif, .jpg, .png)'
+    :message => 'zly typ pliku (.gif, .jpg, .png)'
   }
 end
