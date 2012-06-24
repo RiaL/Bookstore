@@ -1,16 +1,1 @@
-<div class="cart_title">Twój koszyk</div>
-<table>
-  <% @cart.line_items.each do |item| %>
-    <tr>
-      <td><%=item.product.name %></td>
-      <td><%= item.quantity %> szt.</td>
-      <td class="item_price"><%= number_to_currency(item.total_price, :unit => "zł", :format => "%n %u") %></td>
-    </tr>
-  <%end%>
-    <tr class="total_line">
-      <td colspan="2">Suma:</td>
-      <td class="total_cell"><%= number_to_currency(@cart.total_price, :unit => "zł", :format => "%n %u") %></td>
-    </tr>  
-</table>
-
-<%= button_to "Wyczyść koszyk!", @cart, :method => :delete, :confirm => 'Jesteś pewien?' %>
+<%= render @cart %>

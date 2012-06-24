@@ -1,0 +1,215 @@
+\documentclass[pdflatex,11pt]{aghdpl}
+
+\usepackage[polish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% dodatkowe pakiety
+\usepackage{enumerate}
+\usepackage{pdfpages}
+\usepackage{afterpage}
+\usepackage{pdflscape}
+%\usepackage{rotating}
+
+\graphicspath{{./img/}}
+%\usepackage{subfigure} %kilka obrazkow w ramach jednego figure
+
+%------------------------- STRONA TYTUŁOWA -------------------------
+
+\author{Marta~Drabarczyk, Krzysztof~Kutt, Michał~Nowak}
+\titlePL{Księgarnia internetowa \textbf{WhaToRead}}
+\thesistypePL{Wzorce Projektowe}
+\date{2012}
+\departmentPL{Katedra Automatyki}
+\facultyPL{Wydział Elektrotechniki, Automatyki, Informatyki i Elektroniki}
+\setlength{\cftsecnumwidth}{10mm}
+
+%------------------------- DOKUMENT START -------------------------
+
+\begin{document}
+
+\titlepages
+
+\tableofcontents
+\clearpage
+
+%------------------------- OGÓLNY OPIS SYSTEMU -------------------------
+
+\chapter{Ogólny opis systemu}
+
+\section{Cel systemu}
+
+Celem projektu było stworzenie prostego systemu informatycznego obsługującego księgarnię internetową z możliwościami zarządzania książkami i kategoriami oraz składania zamówień. W projekcie wykorzystano wzorce projektowe opisane w dalszej części dokumentacji.
+
+%-------------------------
+
+\section{Udziałowcy}
+
+Właścicielami systemu będą firmy prowadzące księgarnie internetowe, zarówno mniejsze jak i większe, gdyż nasz system łatwo skaluje się do dowolnej ilości użytkowników i książek.
+
+Grupę użytkowników wewnętrznych stanowią pracownicy prowadzący bieżącą działalność księgarni: zarządzają aktualną listą książek i kategorii oraz realizują zamówienie składane przez użytkowników.
+
+Użytkownikami zewnętrznymi systemu są klienci księgarni internetowej.
+
+%-------------------------
+
+\section{Granice systemu}
+
+Jedyną granicę systemu stanowi strona internetowa, zapewniająca dostęp do wszystkich funkcjonalności systemu.
+
+%-------------------------
+
+\section{Lista możliwości}
+
+Dla wszystkich:
+\begin{enumerate}
+\item Rejestracja
+\item Logowanie
+\item Przeglądanie książek
+\item Wyszukiwanie książek
+\item Ocenianie książek
+\end{enumerate}
+
+Dla klientów:
+\begin{enumerate}
+\item Przeglądanie i zmiana danych
+\item Składanie zamówień
+\end{enumerate}
+
+Dla pracowników:
+\begin{enumerate}
+\item Dodanie/modyfikacja/usunięcie kategorii
+\item Dodanie/modyfikacja/usunięcie książki
+\item Przeglądanie i zmiana statusów zamówień złożonych przez użytkowników
+\end{enumerate}
+
+
+%------------------------- ANALIZA DZIEDZINY -------------------------
+
+\chapter{Analiza dziedziny}
+
+\section{Baza danych}
+
+\subsection{Produkty}
+\begin{itemize}
+\item ID produktu
+\item Nazwa
+\item Opis
+\item Cena
+\item ID Kategorii
+\item Zdjęcie
+\item Ilość ocen
+\item Suma ocen
+\item ilość produktów (na stanie)
+\end{itemize}
+
+\subsection{Kategorie produktów}
+\begin{itemize}
+\item ID
+\item Nazwa
+\item Opis
+\end{itemize}
+
+\subsection{Komentarze}
+\begin{itemize}
+\item ID produktu
+\item ID użytkownika
+\item Komentarz
+\end{itemize}
+
+\subsection{Zamówienia}
+\begin{itemize}
+\item ID zamówienia
+\item ID klienta
+\item dane klienta
+\item lista ID produktów
+\item Forma dostawy
+\item Forma płatności
+\item Stan zamówienia
+\end{itemize}
+
+\subsection{Użytkownicy}
+\begin{itemize}
+\item ID użytkownika
+\item Imię
+\item Nazwisko
+\item Adres
+\item Telefon
+\item Mail
+\end{itemize}
+
+
+%------------------------- SPECYFIKACJA WYMAGAŃ -------------------------
+
+\chapter{Specyfikacja wymagań}
+
+\section{Przypadki użycia}
+
+Klient:
+\begin{enumerate}
+\item        Rejestracja
+\item        Logowanie
+\item        Edycja danych
+\item        Przeglądanie katalogu książek
+\item        Wyszukiwanie
+\item        Przeglądanie koszyka zakupów
+\item        Dodanie książki do koszyka
+\item        Usunięcie książki z koszyka
+\item        Skomentowanie książki
+\item        Ocenienie książki
+\item        Złożenie zamówienia
+\end{enumerate}
+
+Pracownik księgarni:
+\begin{enumerate}
+\item        Założenie konta pracownika księgarni
+\item        Dodawanie/Usuwanie kategorii książek
+\item        Dodawanie/Usuwanie książek
+\item        Zmienianie statusu realizacji zamówienia
+\end{enumerate}
+
+%-------------------------
+
+\section{Wybrane funkcjonalności}
+
+\begin{enumerate}
+\item Każdy produkt reprezentowany w systemie posiada swoją nazwę, opis, zdjęcie i cenę. Jest dostępna również możliwość oceny danego produktu przez klientów zarówno poprzez skalę punktową, jak i wpisanie komentarza.
+\item Podział produktów na kategorie (np. Książki dla dzieci / Książki dla dorosłych / Podręczniki / Czasopisma), które można dowolnie usuwać, bądź dodawać w zależności od aktualnych potrzeb.
+\item System posiada funkcjonalność koszyka, do którego klienci mogą dodawać wybrane produkty, celem późniejszego złożenia zamówienia. Koszyk jest przechowywany w ramach aktualnej sesji.
+\item Możliwość zakładania kont w serwisie. Dzięki temu klient ma dostęp do historii swoich zamówień i nie musia wpisywać swoich danych przy każdym zamówieniu, gdyż są one pobierane z jego konta.
+\item Po poprawnym złożeniu zamówienia, klient otrzymuje mail z informacjami o tym zamówieniu (m.in. numer identyfikacyjny), zaś samo zamówienie pojawia się na liście aktywnych zamówień, dostępnej dla pracowników księgarni.
+\item Obsługiwane przez system możliwości płatności to: gotówka przy odbiorze i przelew tradycyjny.
+\end{enumerate}
+
+
+%------------------------- WZORCE PROJEKTOWE -------------------------
+
+\chapter{Wzorce projektowe}
+
+\section{SEC 1}
+
+Klimek jest głupi
+
+%-------------------------
+
+\section{SEC 2}
+
+Klimek jest głupi
+
+%------------------------- IMPLEMENTACJA -------------------------
+
+\chapter{Implementacja}
+
+\section{SEC 1}
+
+Klimek jest głupi
+
+%-------------------------
+
+\section{SEC 2}
+
+Klimek jest głupi
+
+
+\end{document}
+
