@@ -46,9 +46,10 @@ class LineItemsController < ApplicationController
   # tych zmian nie jestem pewien  
   # @line_item = @cart.line_items.build(:product => product)
   # nowa wersja
-    @line_item = @cart.line_items.build
-    @line_item.product = product
-  
+  # @line_item = @cart.line_items.build
+  # @line_item.product = product
+    @line_item = @cart.add_product(product.id)
+    
     respond_to do |format|
       if @line_item.save
         format.html { redirect_to(@line_item.cart, :notice => 'Produkt dodano do koszyka!') }
