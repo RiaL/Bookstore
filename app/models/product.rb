@@ -20,7 +20,7 @@ class Product < ActiveRecord::Base
       if line_items.empty?
         return true
       else
-        errors.add(:base, 'Istnieją powiązania z Line Items')
+        errors.add(:base, 'Istnieja powiazania z Line Items')
         return false;
       end
     end 
