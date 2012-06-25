@@ -1,0 +1,25 @@
+<div class="bookstore_form">
+  <% if flash[:alert] %>
+    <p id="notice"><% flash[:alert] %></p>
+  <% end %>
+    
+  <%= form_tag do %>
+    <fieldset>
+      <legend>Zaloguj się</legend>
+      
+      <div>
+        <label for="name">Nazwa:</label>
+        <%= text_field_tag :name, params[:name] %>
+      </div>
+      
+      <div>
+        <label for="password">Hasło:</label>
+        <%= password_field_tag :password, params[:password] %>
+      </div>
+      
+      <div>
+        <%= submit_tag "Zaloguj" %>
+      </div>
+    </fieldset>
+  <% end %>  
+</div>
