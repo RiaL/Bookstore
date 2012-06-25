@@ -2,7 +2,8 @@
 <html>
 <head>
   <title>Księgarnia WhaToRead</title>
-  <%= stylesheet_link_tag "bookstore" %>
+  <%= stylesheet_link_tag "scaffold" %>
+  <%= stylesheet_link_tag "bookstore", :media => "all" %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tags %>
 </head>
@@ -18,10 +19,20 @@
           <%= render @cart %>
         </div>
       <%end%>
-      <a href="/">Strona główny</a><br/>
+      <a href="/">Katalog produktów</a><br/>
       <a href="/">/powstawiajcie tu cos/</a><br/>
       <a href="/">Kontakt</a><br/>
-      <a href="/">O nas</a>
+      <a href="/admin">Administracja</a>
+      
+      <% if session[:user_id] %>
+        <br/>
+        <%= link_to 'Zamówienia', orders_path %><br/>
+        <%= link_to 'Produkty', products_path %><br/>
+        <%= link_to 'Użytkownicy', users_path %><br/>
+        <br/>
+        <%= button_to 'Wyloguj', logout_path, :method => :delete %>
+      <% end %>
+      
     </div>
     <div id="main">
       <%= yield %>
