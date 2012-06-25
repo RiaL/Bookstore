@@ -174,7 +174,7 @@ Dla pracowników:
 
 Jeden obiekt odpowiada jednemu wierszowi w tabeli.
 
-\textbf{Wykorzystanie:} Moduł "użytkownik" odpowiada jednemu wierszowi w tabeli "użytkownicy".
+\textbf{Wykorzystanie:} Moduł ,,użytkownik'' odpowiada jednemu wierszowi w tabeli ,,użytkownicy''.
 
 %-------------------------
 
@@ -198,7 +198,7 @@ Oddziela bazę danych od obiektów aplikacji, jego zadaniem jest wymiana informa
 
 Pole pozwalające jednoznacznie zidentyfikować obiekt. Przechowywanie identyfikatora pobranego z bazy w obiekcie, co usprawni operacje wyszukiwania i zapisu. Wybór tego wzorca wiąże się z decyzją projektową o typie klucza i jego powtarzalności w obrębie bazy danych.
 
-\textbf{Wykorzystanie:} Pola "id" w każdej tabeli
+\textbf{Wykorzystanie:} Pola ,,id'' w każdej tabeli
 
 %-------------------------
 
@@ -206,7 +206,7 @@ Pole pozwalające jednoznacznie zidentyfikować obiekt. Przechowywanie identyfik
 
 Odwzorowuje relacje pomiędzy obiektami. W ruby wykonywane poprzez użycie: has\_one, belongs\_to itd.
 
-\textbf{Wykorzystanie:} Wiersz w tabeli produkty posiada pole "kategoria" odwołujące się do pola "id" w tabeli kategorie produktów.
+\textbf{Wykorzystanie:} Wiersz w tabeli produkty posiada pole ,,kategoria'' odwołujące się do pola ,,id'' w tabeli kategorie produktów.
 
 %-------------------------
 
@@ -278,7 +278,7 @@ Przechowuje stan sesji na serwerze
 
 Definiuje zależność jeden do wielu pomiędzy obiektami, dzięki czemu w momencie zmiany stanu jednego stanu, automatycznie zostaną zmienione wszystkie obiekty połączone tą relacją.
 
-\textbf{Wykorzystanie:} Po zmianie statusu niedostępnej do tej pory książki na "dostępna" wysyłamy powiadomienie do użytkowników którzy dodali ją do koszyka.\\
+\textbf{Wykorzystanie:} Po zmianie statusu niedostępnej do tej pory książki na ,,dostępna'' wysyłamy powiadomienie do użytkowników którzy dodali ją do koszyka.\\
     Pseudo kod:\\
     class ProductObserver\\
        def after\_update\\
@@ -292,7 +292,7 @@ Definiuje zależność jeden do wielu pomiędzy obiektami, dzięki czemu w momen
 
 Ładuje tylko niektóre dane do obiektu, a resztę dopiero gdy jest potrzebna
 
-\textbf{Wykorzystanie:} Wyświetlanie podstawowych informacji o książkach w indeksie książek takich jak tytuł, autor, rok wydania, a pobieranie reszty czyli opis, komentarze itd. dopiero po wybraniu opcji "więcej"
+\textbf{Wykorzystanie:} Wyświetlanie podstawowych informacji o książkach w indeksie książek takich jak tytuł, autor, rok wydania, a pobieranie reszty czyli opis, komentarze itd. dopiero po wybraniu opcji ,,więcej''
 
 %-------------------------
 
@@ -308,7 +308,7 @@ Pozwala na iterację po obiektach bez konieczności ładowania pełnych danych t
 
 Umożliwia zmianę zachowania obiektu poprzez zmianę jego stanu wewnętrznego
 
-\textbf{Wykorzystanie:} Zamówienie książki będzie możliwe tylko i wyłącznie wtedy, gdy stan produktu będzie ustawiony na "dostępny". W przeciwnym razie możliwe będzie jedynie przejrzenie ocen i opini o produkcie.
+\textbf{Wykorzystanie:} Zamówienie książki będzie możliwe tylko i wyłącznie wtedy, gdy stan produktu będzie ustawiony na ,,dostępny''. W przeciwnym razie możliwe będzie jedynie przejrzenie ocen i opini o produkcie.
 
 %------------------------- IMPLEMENTACJA -------------------------
 
